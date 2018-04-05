@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CommandAndControl>
+	<parameter1>/C SYSTEMINFO /FO LIST >> text.txt </parameter1>
+</CommandAndControl>

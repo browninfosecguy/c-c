@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<commandAndControl>
+	<command1 name="cmd.exe" parameter1=""/>
+</commandAndControl>
